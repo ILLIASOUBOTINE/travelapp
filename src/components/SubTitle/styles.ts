@@ -7,7 +7,7 @@ const styles = StyleSheet.create({
       fontWeight: 'bold',
       color: Colors.BLACK,
       marginTop: 40,
-      marginBottom: 34,
+      marginBottom: 18,
     }
 });
 

@@ -10,12 +10,7 @@ const styles = StyleSheet.create({
     titleNormalWeight: {
       fontWeight: "normal"
     },
-    subTitle: {
-      fontSize: 20,
-      color: Colors.BLACK,
-      marginTop: 40,
-      marginBottom: 34,
-    }
+    
 });
 
 export default styles;
