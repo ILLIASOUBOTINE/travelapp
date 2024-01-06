@@ -4,18 +4,20 @@ export const styles = StyleSheet.create({
     container: {
       // flex: 1,
       margin: 32,
+      // backgroundColor: "yellow",
     },
-    flex:{
-      flex: 1,
-      backgroundColor: "blue",
-    },
+    
    safeView: {
     // flex: 1,
-    //backgroundColor: "red",
+    // backgroundColor: "red",
    },
    view: {
     // flex: 1,
-    backgroundColor: "yellow",
+    // backgroundColor: "yellow",
+   },
+   row: {
+    justifyContent: "space-between",
+    flexDirection: "row",
    }
   });
 

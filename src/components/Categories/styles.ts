@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
     },
     itemContainer: {
         
-        
+       
         marginRight: 17,
         marginVertical: 14
     },

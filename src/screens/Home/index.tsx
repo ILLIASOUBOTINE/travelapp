@@ -4,6 +4,7 @@ import { styles } from "./styles";
 import Title from "../../components/Title";
 import SubTitle from "../../components/SubTitle";
 import Categories from "../../components/Categories";
+import AttractionCard from "../../components/AttaractionCard";
 
 const Home = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
@@ -20,7 +21,22 @@ const Home = () => {
               onPressCategory={setSelectedCategory}
               categories={['All', 'Popular', 'Historical', 'Random', 'Trending', 'Exclusive']}
             />
+
+            <View style={styles.row}>
+              <AttractionCard 
+                title="Entertaiment Park"
+                subTitle="Rome"
+                imageScr="https://www.petitfute.com/medias/mag/12133/835/8896-les-10-parcs-d-attraction.jpg"
+              />
+              <AttractionCard 
+                title="Entertaiment Park"
+                subTitle="Rome"
+                imageScr="https://www.petitfute.com/medias/mag/12133/835/8896-les-10-parcs-d-attraction.jpg"
+              />
+            </View>
+            
           </View>
+
       </SafeAreaView>
     );
 }
