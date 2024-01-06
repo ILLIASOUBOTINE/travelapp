@@ -1,27 +1,19 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { SafeAreaView, View } from "react-native";
 import { styles } from "./styles";
 import Title from "../../components/Title";
+import SubTitle from "../../components/SubTitle";
 
 const Home = () => {
-  const [stateCount, setCount] = useState(0);
-
-  // useEffect(()=>{
-  //   const intervalId = setInterval(()=>{
-  //   setCount(prevCount => prevCount + 1)
-  // },3000)
-
-  // return () => clearInterval(intervalId);
-  // },[])
-
- 
+  
 
     return (
-        <SafeAreaView style={[styles.safeView, styles.flex]}>
-        <View style={[styles.flex, styles.view]}>
-          <Title text='My first component' counter={stateCount.valueOf()}/>
-      
-        </View>
+      <SafeAreaView style={styles.safeView}>
+          <View style={styles.container}>
+            <Title text="Where do" isNormalfontWeight />
+            <Title text="you want to go?"/>
+            <SubTitle text="Explore Attractions" />
+          </View>
       </SafeAreaView>
     );
 }

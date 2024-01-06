@@ -1,33 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import {Text} from "react-native";
 import styles from "./styles";
 
-type Props = {
+type PropsForTitle = {
     text: string,
-    counter: number,
+    isNormalfontWeight?: boolean,
 }
 
-const Title = ({text, counter}: Props) => {
-    console.log(text);
-
-    const [stateText, setText] = useState(""); 
-
-    useEffect(()=>{
-        setText(text.concat(counter.toString()));
-    },[counter]);
+const Title = ({text, isNormalfontWeight}: PropsForTitle) => {
    
-    const onPressText = () => {
-        if (stateText === "Default text") {
-            setText(text);
-        }else {
-            setText("Default text");
-        }
-    };
-        
-        
-
     return (
-        <Text onPress={onPressText} style={styles.title}> {stateText}</Text>
+        <Text style={isNormalfontWeight? [styles.title, styles.titleNormalWeight] : styles.title}> {text}</Text>
      
     );
 }
