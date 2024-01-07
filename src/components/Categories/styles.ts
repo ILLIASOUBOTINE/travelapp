@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
         borderBottomColor: Colors.LIGHT_BLUE,
     },
     container: {
-        backgroundColor: "red",
+        // backgroundColor: "red",
     },
 });
 
