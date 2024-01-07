@@ -3,12 +3,12 @@ import { StyleSheet } from "react-native";
 export const styles = StyleSheet.create({
     container: {
       // flex: 1,
-      margin: 32,
+      marginHorizontal: 32,
       // backgroundColor: "yellow",
     },
     
    safeView: {
-    // flex: 1,
+    flex: 1,
     // backgroundColor: "red",
    },
    view: {
@@ -16,8 +16,8 @@ export const styles = StyleSheet.create({
     // backgroundColor: "yellow",
    },
    row: {
-    justifyContent: "space-between",
-    flexDirection: "row",
+    //paddingHorizontal: 32,
+    marginHorizontal: 32,
    }
   });
 

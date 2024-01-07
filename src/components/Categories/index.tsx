@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+
 import { FlatList, Pressable, Text, TouchableOpacity} from "react-native";
 import styles from "./styles";
 
@@ -11,18 +11,21 @@ type CategorieProps = {
 
 const Categories = ({categories, selectedCategory, onPressCategory}: CategorieProps) => {
 
-  
 
     return (
+        
         <FlatList 
             horizontal 
-            style={{ marginRight: -32}}
+            style={styles.container}
             showsHorizontalScrollIndicator={false}
             data={categories}
-            renderItem={({item})=>{
+            keyExtractor={item => item}
+            renderItem={({item, index})=>{
                 const selected = selectedCategory === item;
                 return(
-                    <TouchableOpacity onPress={() => onPressCategory(item)} style={[styles.itemContainer, selected ? styles.selectedItemContainer: {}]}>
+                    <TouchableOpacity onPress={() => onPressCategory(item)} 
+                        style={[styles.itemContainer, selected ? styles.selectedItemContainer: {}, index === 0 ? {marginLeft: 32} : {}]}
+                        >
                         <Text  style={[styles.item, selected ? styles.selectedItem : {}]}> {item} </Text>
                     </TouchableOpacity>
                 );

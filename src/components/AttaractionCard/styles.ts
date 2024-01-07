@@ -10,10 +10,10 @@ const styles = StyleSheet.create({
        borderWidth: 1,
        borderColor: Colors.GREY,
        borderRadius: 15,
-        width: (width - 64 - width*0.025)/2,
-        
-       
-    }, 
+       width: (width - 64 - width*0.025)/2,
+        marginBottom: width*0.025,
+       marginRight: width*0.025,
+    },
     image: {
         // width: (width - 64 - width*0.05)/2,
         // height: 100,
