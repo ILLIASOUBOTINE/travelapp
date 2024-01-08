@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { FlatList, SafeAreaView, ScrollView, Text, View } from "react-native";
+import { FlatList, SafeAreaView, View } from "react-native";
 import { styles } from "./styles";
 import Title from "../../components/Title";
 import SubTitle from "../../components/SubTitle";
@@ -8,33 +8,29 @@ import AttractionCard from "../../components/AttaractionCard";
 import jsonData from '../../data/attractions.json';
 import categoriesJson from '../../data/categories.json';
 import Message from "../../components/Message";
-
+import { useNavigation } from "@react-navigation/native";
+import ICard from "../../interface/ICard";
 const ALL = "All";
 
-interface ICard {
-  id: number; 
-  name: string; 
-  city: string; 
-  country: string; 
-  entry_price: string; 
-  address: string; 
-  opening_time: string; 
-  closing_time: string; 
-  categories: string[]; 
-  images: string[]; 
-  coordinates: { lat: number; lon: number; };
-}
+
+
+//type THomeProps
+
+
 
 const Home = () => {
   const [selectedCategory, setSelectedCategory] = useState(ALL);
   const [data, setData] = useState<ICard[]>([]);
+  const navigation = useNavigation();
 
   useEffect(()=>{
     //console.log('jsonData :>> ', jsonData);
     setData(jsonData);
-    // console.log(data);
+    // console.log('propsNav: ', navigation);
     
   }, []);
+
+ 
 
   useEffect(() => {
     const result = selectedCategory === ALL ? jsonData : jsonData?.filter((e) => e.categories?.includes(selectedCategory));
@@ -45,22 +41,7 @@ const Home = () => {
 
     return (
       <SafeAreaView style={styles.safeView}>
-          {/* <ScrollView showsVerticalScrollIndicator={false} style={styles.container}> */}
-            
-
-            {/* <ScrollView contentContainerStyle={styles.row}>
-              {data?.map((item) =>(
-                <AttractionCard 
-                  key={item.id}
-                  title={item.name}
-                  subTitle={item.city}
-                  imageScr={item.images[0]}
-                />
-              ))}
-              
-              
-            </ScrollView> */}
-                
+          
                 
             <FlatList 
               ListEmptyComponent={<Message text="No items found."/> }
@@ -80,7 +61,7 @@ const Home = () => {
                   />
                 </>
               }
-              //contentContainerStyle={styles.row}
+              
               data={data}
              
               numColumns={2}
@@ -92,11 +73,12 @@ const Home = () => {
                   title={item.name}
                   subTitle={item.city}
                   imageScr={item.images[0]}
+                  onPress={() => navigation.navigate('AttractionDetails', {item}) }
                 />
               )}
             />
             
-          {/* </ScrollView> */}
+          
 
       </SafeAreaView>
     );

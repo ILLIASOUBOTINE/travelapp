@@ -1,5 +1,5 @@
 import React from "react";
-import { Image, Text, View } from "react-native";
+import { Image, Text, TouchableOpacity, View } from "react-native";
 import styles from "./styles";
 
 
@@ -8,12 +8,13 @@ type TAttractionProps = {
     imageScr: string,
     title: string,
     subTitle: string,
+    onPress: () => void,
 }
 
-const AttractionCard = ({imageScr, title, subTitle}: TAttractionProps) => {
+const AttractionCard = ({imageScr, title, subTitle, onPress}: TAttractionProps) => {
 
     return (
-        <View style={styles.card}>
+        <TouchableOpacity style={styles.card} onPress={onPress}>
             <Image style={styles.image} source={{uri: imageScr}}/>
             <Text style={styles.title}>{title}</Text>
             <View style={styles.row}>
@@ -22,7 +23,7 @@ const AttractionCard = ({imageScr, title, subTitle}: TAttractionProps) => {
             </View>
             
             
-        </View>
+        </TouchableOpacity>
     )
 }
 
